@@ -39,19 +39,19 @@ function RapidFire()
   OutputLogMessage("Running RapidFire function \n")
   AutoPing()
   repeat
-    for i = 0, 16 do
+    if IsMouseButtonPressed(3) then
       Sleep(100)
-      OutputLogMessage("Left Click \n")
       PressMouseButton(LC)
+      OutputLogMessage("LMB down \n")
       Sleep(100)
-      OutputLogMessage("Releaase Left Click \n")
       ReleaseMouseButton(LC)
+      OutputLogMessage("LMB up \n")
     end
-  until not IsMouseButtonPressed(2)  
+  until not IsMouseButtonPressed(3)  
 end
-  --until not IsMouseButtonPressed(3)
---end
 
+
+--MAIN LOOP  
 EnablePrimaryMouseButtonEvents(true);          
 
 function OnEvent(event, arg)
@@ -79,11 +79,11 @@ function OnEvent(event, arg)
       RapidFire()
     elseif rapidfire==false then
       repeat
-        if IsMouseButtonPressed(LC)  then
+        if IsMouseButtonPressed(1)  then
           AutoPing()
           Sleep(1500)
         end
-      until not IsMouseButtonPressed(RC)
+      until not IsMouseButtonPressed(3)
       end    
     end
 end
