@@ -65,9 +65,15 @@ function OnEvent(event, arg)
   if (event == "MOUSE_BUTTON_PRESSED" and arg == rapid_toggle) then
     rapidfire = not rapidfire
     if rapidfire==true then
+      PressKey("numplus")
+      Sleep(20)
+      ReleaseKey("numplus")
       OutputLogMessage("Rapid = True \n")
     elseif rapidfire==false then
-      OutputLogMessage("Rapidfire = False \n")
+      PressKey("numminus")
+      Sleep(20)
+      ReleaseKey("numminus")
+      OutputLogMessage("Rapid = False \n")
     end
   end
 
