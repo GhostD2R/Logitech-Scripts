@@ -22,7 +22,11 @@ SA="K"                 --My SteadyAim key in the game
 function AutoPing()
   OutputLogMessage("Running AutoPing function \n")
   PressKey(AP)        
-  Sleep(math.random(APMinSpeed,APMaxSpeed))
+  Sleep(20)
+  ReleaseKey(AP)
+  Sleep(50)
+  PressKey(AP)        
+  Sleep(20)
   ReleaseKey(AP)
   OutputLogMessage("Pressed AP \n")
 end
