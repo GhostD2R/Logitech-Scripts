@@ -44,12 +44,18 @@ function RapidFire()
   AutoPing()
   repeat
     if IsMouseButtonPressed(3) then
-      Sleep(100)
+      Sleep(30)
+      PressKey("lctrl")
+      OutputLogMessage("LCTRL down \n")
+      Sleep(30)
       PressMouseButton(LC)
       OutputLogMessage("LMB down \n")
-      Sleep(100)
+      Sleep(30)
       ReleaseMouseButton(LC)
       OutputLogMessage("LMB up \n")
+      Sleep(30)
+      ReleaseKey("lctrl")
+      OutputLogMessage("LCTRL up \n")
     end
   until not IsMouseButtonPressed(3)  
 end
